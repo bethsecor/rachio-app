@@ -30,9 +30,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'figaro'
+gem 'faraday'
+
 group :development, :test do
   gem 'pry'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do
