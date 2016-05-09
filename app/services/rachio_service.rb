@@ -15,6 +15,10 @@ class RachioService
     parse(connection.get("person/#{personal_id}"))
   end
 
+  def start_zones(zones)
+    connection.put("zone/start_multiple", { "zones": zones }.to_json)
+  end
+
   private
 
     def parse(response)
