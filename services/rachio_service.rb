@@ -7,8 +7,8 @@ class RachioService
     connection.headers['Content-Type'] = "application/json"
   end
 
-  def personal_info
-      parse(connection.get("person/info"))
+  def personal_id
+      parse(connection.get("person/info"))[:id]
   end
 
   private
