@@ -14,11 +14,32 @@
  *= require_self
  */
 
+body {
+   background-image: url('garden.jpeg');
+ }
 
 h1 {
   font-family: 'Montserrat Alternates', sans-serif;
+  color: white;
 }
 
 h4 {
   font-family: 'Raleway', sans-serif;
+}
+
+.card {
+  width: 300px;
+}
+
+.device {
+  background: rgba(255,255,255,0.7);
+  border-radius: 25px;
+  padding: 10px;
+  width: 70%;
+  margin: auto;
+}
+
+.zones {
+  width: 80%;
+  margin: auto;
 }
