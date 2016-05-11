@@ -1,0 +1,10 @@
+<ul class="collection">
+  <% device.zones.each do |zone| %>
+  <li class="collection-item avatar zone" data-id="<%= zone[:id] %>">
+    <img src="<%= zone[:customNozzle][:imageUrl] %>" alt="nozzle-type" class="circle">
+    <span class="title"><%= zone[:name] %></span>
+    <p class="info">Area: <%= zone[:yardAreaSquareFeet] %> sq ft</p>
+    <%= render partial: 'water_form', locals: { zone: zone } %>
+  </li>
+  <% end %>
+</ul>

@@ -1,0 +1,35 @@
+function startWater() {
+  $(".device").delegate(".water-btn", 'click', function() {
+      var $zone = $(this).closest(".zone");
+      var $id = $zone.attr('data-id');
+      var $duration = $('#start-' + $id).val();
+      var $form = $(this).closest(".secondary-content");
+      console.log($duration);
+
+      if ($duration !== ""){
+        var zoneData = {
+          "id": $id,
+          "duration": Number($duration)
+        };
+
+        $form.empty().append("Starting sprinkler...")
+
+        $.ajax({
+          type: "PUT",
+          url: "https://api.rach.io/1/public/zone/start",
+          headers: {
+            'Content-Type':'application/json',
+            'Authorization':'Bearer <%= ENV['rachio_key'] %>'
+          },
+          data: JSON.stringify(zoneData),
+          success: function() {
+            console.log('yay!');
+            $form.empty().append("Watering for " + $duration + " minutes.");
+          },
+          error: function(xhr) {
+            console.log(xhr.responseText);
+          }
+        });
+      }
+  });
+}

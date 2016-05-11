@@ -37,9 +37,28 @@ h4 {
   padding: 10px;
   width: 70%;
   margin: auto;
+  margin-bottom: 20px;
 }
 
 .zones {
   width: 80%;
   margin: auto;
+}
+
+.title, .info {
+  color: #26a69a;
+}
+
+.secondary-content {
+  display: inline-block;
+}
+
+.minutes {
+  width: 100px;
+  float: left;
+}
+
+.water-btn {
+  float:left;
+  margin-left: 2px;
 }
